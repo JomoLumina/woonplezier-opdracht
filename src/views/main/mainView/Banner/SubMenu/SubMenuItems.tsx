@@ -21,17 +21,29 @@ const useStyles = makeStyles((theme: Theme) => ({
     textTransform: 'none',
     borderRadius: 0,
     margin: 0,
-    padding: 28,
-    height: 202,
+    padding: '28px 5px',
+    height: 150,
     border: '1px solid #ccc',
     display: 'inline-block',
-    width: 260,
+    width: 202,
     '&:hover': {
       backgroundColor: theme.palette.background.paper,
-    }
+    },
+    [theme.breakpoints.down('md')]: {
+      width: 180,
+      height: 100,
+      fontSize: 8,
+    },
   },
   buttonIcon: {
-    position: 'relative'
+    position: 'relative',
+    width: 48,
+    height: 48,
+    [theme.breakpoints.down('md')]: {
+      width: 32,
+      height: 32,
+    },
+
   },
   buttonText: {
     position: 'relative',
@@ -63,7 +75,6 @@ const SubMenuItems: FC = () => {
   const classes = useStyles();
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(e.target.value);
   }
   return (
     <div>

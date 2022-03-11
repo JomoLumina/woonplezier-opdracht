@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     minHeight: '500px',
     maxWidth: 'none',
     padding: '90px 30px 10px 14%',
+    [theme.breakpoints.down('xs')]: {
+      padding: 20,
+      margin: 'auto',
+    },
   },
   content: {
     position: 'relative'
@@ -18,7 +22,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 28,
     color: theme.palette.text.primary,
     marginBottom: theme.spacing(1.5),
-    whiteSpace: 'nowrap'
   },
   text: {
     fontFamily: 'Roboto',
@@ -31,10 +34,18 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
     display: 'inline-block',
     verticalAlign: 'top',
-    width: '43%'
+    width: '43%',
+    [theme.breakpoints.down('md')]: {
+      width: 'calc(100% - 20px)',
+      display: 'flex',
+      flexDirection: 'column'
+    },
   },
   marginLeft50: {
-    marginLeft: '43%'
+    marginLeft: '43%',
+    [theme.breakpoints.down('md')]: {
+      marginLeft: 'initial',
+    },
   }
 
 }));

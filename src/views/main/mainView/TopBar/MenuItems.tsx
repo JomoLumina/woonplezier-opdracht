@@ -14,7 +14,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 20,
     textTransform: 'none',
     marginLeft: 28,
-    borderRadius: theme.spacing(1)
+    borderRadius: theme.spacing(1),
+    [theme.breakpoints.down('md')]: {
+      display: 'none'
+    }
   }
 }));
 

@@ -13,6 +13,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: -5,
     maxWidth: 'none',
     padding: '150px 30px 10px 14%',
+    [theme.breakpoints.down('xs')]: {
+      padding: 20,
+      margin: 'auto',
+    },
   },
   header: {
     fontFamily: 'Roboto',
@@ -23,7 +27,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 28,
     color: '#054175',
     marginBottom: theme.spacing(1.5),
-    whiteSpace: 'nowrap'
   },
   text: {
     fontFamily: 'Roboto',
@@ -43,7 +46,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     position: 'relative',
     display: 'inline-block',
     verticalAlign: 'top',
-    width: '43%'
+    width: '43%',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column'
+    },
   },
   imageContainer: {
     position: 'relative',
@@ -53,7 +61,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '50%',
     maxWidth: 720,
     top: 50,
-    right: 0
+    right: 0,
+    [theme.breakpoints.down('md')]: {
+      position: 'relative',
+      width: 'calc(100% - 20px)',
+      top: 'auto',
+      right: 'auto'
+
+    },
+
   }
 }));
 

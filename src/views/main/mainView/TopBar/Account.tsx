@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 import {
   Box,
   ButtonBase,
-  Hidden,
   Menu,
   MenuItem,
   Typography,
@@ -92,14 +91,12 @@ const Account: FC = () => {
           className={classes.avatar}
           src={AvatarImage}
         />
-        <Hidden xsDown>
-          <Typography
-            variant="h6"
-            className={classes.username}
-          >
-            { user ? user.name : 'Anonymous'}
-          </Typography>
-        </Hidden>
+        <Typography
+          variant="h6"
+          className={classes.username}
+        >
+          { user ? user.name : 'Anonymous'}
+        </Typography>
       </Box>
       <Menu
         onClose={handleClose}

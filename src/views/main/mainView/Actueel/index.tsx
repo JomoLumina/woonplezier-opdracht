@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     maxWidth: 'none',
     padding: '150px 8% 10px 8.5%',
+    [theme.breakpoints.down('xs')]: {
+      padding: 20,
+      margin: 'auto',
+    },
   },
   header: {
     fontSize: 20,

@@ -15,6 +15,7 @@ import type {
 import { THEMES } from 'src/constants';
 import { softShadows } from './shadows';
 import typography from './typography';
+import { BreakpointsOptions } from '@material-ui/core/styles/createBreakpoints';
 
 interface TypeBackground extends MuiTypeBackground {
   dark: string;
@@ -49,6 +50,7 @@ interface ThemeOptions {
   name?: string;
   direction?: Direction;
   typography?: Record<string, any>;
+  breakpoints?: BreakpointsOptions;
   overrides?: Record<string, any>;
   palette?: Record<string, any>;
   shadows?: MuiShadows;
@@ -57,6 +59,15 @@ interface ThemeOptions {
 const baseOptions: ThemeOptions = {
   direction: 'ltr',
   typography,
+  breakpoints:{
+    values: {
+      xs: 0,
+      sm: 640,
+      md: 1024,
+      lg: 1200,
+      xl: 1440,
+    },
+  },
   overrides: {
     MuiLinearProgress: {
       root: {
@@ -88,7 +99,16 @@ const themesOptions: ThemeOptions[] = [
             color: colors.blueGrey[600]
           }
         }
-      }
+      },
+    },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 640,
+        md: 1024,
+        lg: 1200,
+        xl: 1440,
+      },
     },
     typography: {
       fontFamily: `"Roboto Slab", "Roboto", "Helvetica", "Arial", sans-serif`,

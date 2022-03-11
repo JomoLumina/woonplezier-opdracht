@@ -16,20 +16,47 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   content: {
     position: 'relative',
-    top: -40
+    top: -40,
+    [theme.breakpoints.down('md')]: {
+      top: -90
+    },
+    [theme.breakpoints.down('md')]: {
+      top: 0
+    },
   },
   text: {
     position: 'absolute',
-    top: -160,
+    top: -100,
+    [theme.breakpoints.down('xs')]: {
+      top: 0,
+      margin: 0
+    },
   },
   topic: {
     position: 'relative',
     fontSize: 62,
     maxWidth: 560,
     textShadow: '0 3px 3px rgb(0 0 0 / 90%)',
+    [theme.breakpoints.down('md')]: {
+      fontSize: 50,
+      maxWidth: 480,
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 32,
+      maxWidth: 350,
+    },
+
   },
   subMenuItemContainer: {
     position: 'absolute',
+    top: 50,
+    [theme.breakpoints.down('md')]: {
+      overflow: 'hidden',
+      height: 100,
+    },
+    [theme.breakpoints.down('xs')]: {
+      display: 'none'
+    },
   }
 }));
 
