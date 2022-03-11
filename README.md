@@ -1,10 +1,17 @@
-## Thebe Investment Management Exercise 
+## Woonplezier Opdracht 
 ***By Jomo Lumina***
 
 
-Live Demo:  [Thebe Investment Image Gallery](https://thebe-investments-image-gallery.vercel.app/)
+Live Demo:  [Woonplezier Opdracht](https://woonplezier-opdracht.vercel.app/)
 
 The application login/registration flow uses Firebase authentication API, and allows<br> for user registration with email and password, and also allows for Sign In with <br>your Google Account, or the registered email and password.
+
+It also allows for anonymous sign in, which just takes you to the hope page and bypasses the signing in part.
+
+This application was created to function on devices of all difference sizes.
+
+Create React was used to create this application and the styling uses the React Scripts of makeStyles because in that way
+I am able to theme the entire application<br> easier with styles that can work through out the application.
 
 The application is also integrated with Vercel to create a CI/CD pipeline which auto<br> deploys when changes are checked in into the main branch.
 
