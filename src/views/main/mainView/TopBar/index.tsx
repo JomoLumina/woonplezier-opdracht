@@ -90,7 +90,7 @@ const TopBar: FC<TopBarProps> = ({
         </Box>
         </Hidden>
         <Box ml={2}>
-          <Account />
+          <Account references={references}/>
         </Box>
       </Toolbar>
     </AppBar>

@@ -23,15 +23,14 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 const pages = ['Ik huur', 'Ik zoek', 'Projecten', 'Contact'];
 
-interface MenuItemsReferences{
+interface MenuItemsProps{
   references: any;
 }
 
-const MenuItems: FC<MenuItemsReferences> = ({references}) => {
+const MenuItems: FC<MenuItemsProps> = ({references}) => {
   const classes = useStyles();
   const handleClick = (e, i) => {
     e.preventDefault();
-    console.log(e.target.value, i);
     references[i].current.scrollIntoView({behavior: 'smooth'})
     
   }

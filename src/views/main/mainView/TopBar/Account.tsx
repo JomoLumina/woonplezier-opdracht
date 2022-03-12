@@ -11,7 +11,8 @@ import {
   MenuItem,
   Typography,
   makeStyles,
-  colors
+  colors,
+  Hidden
 } from '@material-ui/core';
 import useAuth from 'src/hooks/useAuth';
 import { Theme } from 'src/theme';
@@ -50,7 +51,12 @@ const useStyles = makeStyles((theme: Theme) => ({
   }
 }));
 
-const Account: FC = () => {
+const pages = ['Ik huur', 'Ik zoek', 'Projecten', 'Contact'];
+
+interface MenuItemsProps{
+  references: any;
+}
+const Account: FC<MenuItemsProps> = ({references}) => {
   const classes = useStyles();
   const history = useHistory();
   const ref = useRef<any>(null);
@@ -64,6 +70,12 @@ const Account: FC = () => {
   const handleClose = (): void => {
     setOpen(false);
   };
+
+  const handleClick = (e, i) => {
+    e.preventDefault();
+    references[i].current.scrollIntoView({behavior: 'smooth'});
+    setTimeout(()=>{handleClose();}, 600);
+  }
 
   const handleLogout = async (): Promise<void> => {
     try {
@@ -102,15 +114,23 @@ const Account: FC = () => {
         onClose={handleClose}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'right'
+          horizontal: 'left'
         }}
         color={colors.common.black}
         keepMounted
         PaperProps={{ className: classes.popover }}
         getContentAnchorEl={null}
         anchorEl={ref.current}
-        open={isOpen}
-      >
+        open={isOpen}>
+        <Hidden mdUp>
+          {pages.map((page, i) => (
+            <MenuItem
+              key={page}
+              onClick={e => handleClick(e,i)}>
+              {page}
+            </MenuItem>
+          ))}
+        </Hidden>
         <MenuItem onClick={handleLogout}>
           Logout
         </MenuItem>
